@@ -1,0 +1,3 @@
+rootProject.name = 'titrateter'
+
+include "bot"

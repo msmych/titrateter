@@ -1,0 +1,28 @@
+plugins {
+    id "org.jetbrains.kotlin.jvm" version "$kotlinVersion"
+}
+
+repositories {
+    jcenter()
+    maven {
+        name = "GitHubPackages"
+        url = "https://maven.pkg.github.com/msmych/telestella"
+        credentials {
+            username = System.getenv("GITHUB_ACTOR")
+            password = System.getenv("GITHUB_TOKEN")
+        }
+    }
+}
+
+test {
+    useJUnitPlatform()
+}
+
+dependencies {
+    implementation "ru.tinkoff.invest:openapi-java-sdk-java8:$tinkoffOpenApiVersion"
+    implementation "dev.msmych.telestella:telestella-bot:$telestellaVersion"
+
+    testImplementation "org.junit.jupiter:junit-jupiter-engine:$jupiterVersion"
+    testImplementation "io.mockk:mockk:$mockkVersion"
+    testImplementation "org.assertj:assertj-core:$assertjVersoin"
+}
