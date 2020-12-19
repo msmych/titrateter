@@ -26,7 +26,7 @@ internal class PortfolioProviderTest {
     private val eurPosition = PortfolioPosition("BBG0013HJJ31", null, null, Currency, BigDecimal("200"), ZERO, null, 1, null, null, "Евро")
 
     @Test
-    fun should_return_portfolio_details() {
+    fun `should return portfolio details`() {
         every { portfolioContext.getPortfolio(null) } returns completedFuture(Portfolio(listOf(usdPosition, eurPosition)))
 
         val text = provider.text(update, bot)
