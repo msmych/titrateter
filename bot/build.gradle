@@ -6,7 +6,7 @@ repositories {
     jcenter()
     maven {
         name = "GitHubPackages"
-        url = "https://maven.pkg.github.com/msmych"
+        url = "https://maven.pkg.github.com/msmych/telestella"
         credentials {
             username = System.getenv("GITHUB_ACTOR")
             password = System.getenv("GITHUB_TOKEN")
